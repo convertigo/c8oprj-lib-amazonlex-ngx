@@ -1,0 +1,12 @@
+↑convertigo: 8.0.0.m006
+↓lib_AmazonLEX_Ngx [core.Project]: 
+  comment: This library  enables projects to interact with Amazon LEX chatbots.
+  version: 2.0.0
+  ↓AmazonLEXEndpoint [connectors.HttpConnector]: 🗏 connectors/AmazonLEXEndpoint.yaml
+  ↓Init [sequences.GenericSequence]: 🗏 sequences/Init.yaml
+  ↓PostTextGetAudio [sequences.GenericSequence]: 🗏 sequences/PostTextGetAudio.yaml
+  ↓PostTextGetText [sequences.GenericSequence]: 🗏 sequences/PostTextGetText.yaml
+  ↓Project_reference [references.ProjectSchemaReference]: 
+    projectName: mobilebuilder_tpl_8_0_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_8_0_0_ngx:autoPull=true
+  ↓Mobile_application [core.MobileApplication]: 
+    ↓Application [ngx.components.ApplicationComponent]: 🗏 mobileApplication.yaml

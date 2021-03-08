@@ -1,0 +1,390 @@
+comment: |
+  'This component can be inserted in any Application content and will display a chat bot window interacting with Amazon Lex.
+  
+  The component needs to have to global symbold defined :
+  
+  - AWS.key and
+  - AWS Secret
+  
+  
+  '
+↓PageEvent [ngx.components.UIPageEvent-1562052281350]: 
+  ↓Log [ngx.components.UIDynamicAction-1562052281353]: 
+    beanData: '{"ionBean":"LogAction","message":"plain:some log from ChatBot !"}'
+    ↓InitializeVariables [ngx.components.UICustomAction-1562052281356]: 
+      actionValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              		page.c8o.log.debug("declaring chatbot variables...");
+              		this["messages"] = [];
+              		this["msgID"] = 1;
+              		resolve();
+              
+      ↓CallSequence [ngx.components.UIDynamicAction-1562052281359]: 
+        beanData: |
+          '{
+           "ionBean": "CallSequenceAction",
+           "requestable": "plain:lib_AmazonLEX_Ngx.Init",
+           "marker": "plain:INIT"
+          }'
+        ↓InitMessage [ngx.components.UICustomAction-1562052281362]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		    //this.messages.push({id: 1, direction: "to", text: "What can I do for you?"})
+                  		    this["messages"].push({id: 1, direction: "to", text: "What can I do for you?"})	    
+                  		    this.global.newUser = "User" + new Date().getTime().toString().substr(-5);
+                  		    resolve();
+                  '
+↓ScrollArea [ngx.components.UIDynamicElement-1562052281365]: 
+  beanData: '{"ionBean":"DivTag"}'
+  identifier: chatarea
+  tagName: div
+  ↓Span [ngx.components.UIDynamicElement-1562052281368]: 
+    beanData: '{"ionBean":"SpanTag"}'
+    tagName: span
+    ↓Grid [ngx.components.UIDynamicElement-1562052281371]: 
+      beanData: '{"ionBean":"Grid"}'
+      tagName: ion-grid
+      ↓Directive [ngx.components.UIControlDirective-1562052281374]: 
+        directiveExpression: let message of this['messages']
+        ↓Directive [ngx.components.UIControlDirective-1562052281377]: 
+          directiveExpression: message.direction === "to"
+          directiveName: If
+          ↓GridRow [ngx.components.UIDynamicElement-1562052281380]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓GridCol [ngx.components.UIDynamicElement-1562052281383]: 
+              beanData: '{"ionBean":"GridCol","Size":"plain:8"}'
+              identifier: alexa
+              tagName: ion-col
+              ↓Div1 [ngx.components.UIDynamicElement-1562052281386]: 
+                beanData: '{"ionBean":"DivTag"}'
+                tagName: div
+                ↓Text [ngx.components.UIText-1562052281389]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:params1562052281347.toUser
+                ↓Attr [ngx.components.UIAttribute-1562052281392]: 
+                  attrName: class
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:toUser
+              ↓Div [ngx.components.UIDynamicElement-1562052281395]: 
+                beanData: '{"ionBean":"DivTag"}'
+                tagName: div
+                ↓Text [ngx.components.UIText-1562052281398]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:message.text
+                ↓Attr [ngx.components.UIAttribute-1562052281401]: 
+                  attrName: class
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:toMsg
+              ↓Attr [ngx.components.UIAttribute-1562052281404]: 
+                attrName: class
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:message
+              ↓Animation [ngx.components.UIAnimation-1562052281407]: 
+                animationName: slideInLeft
+        ↓Directive1 [ngx.components.UIControlDirective-1562052281410]: 
+          directiveExpression: message.direction === "from"
+          directiveName: If
+          ↓GridRow1 [ngx.components.UIDynamicElement-1562052281413]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓GridCol [ngx.components.UIDynamicElement-1562052281416]: 
+              beanData: '{"ionBean":"GridCol","Offset":"plain:5"}'
+              tagName: ion-col
+              ↓Attr [ngx.components.UIAttribute-1562052281419]: 
+                attrName: class
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:message
+              ↓Div1 [ngx.components.UIDynamicElement-1562052281422]: 
+                beanData: '{"ionBean":"DivTag"}'
+                tagName: div
+                ↓Text [ngx.components.UIText-1562052281425]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.global.newUser
+                ↓Attr [ngx.components.UIAttribute-1562052281428]: 
+                  attrName: class
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:fromUser
+                ↓Style [ngx.components.UIStyle-1562052281431]: 
+                  styleContent: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                        →: |
+                          '	padding: 10px !important;
+                          	margin-bottom: 4px !important;
+                          	
+                          	text-align: right;
+                          	padding-bottom: 12px;
+                          	color: rgba(9, 69, 171, 1);
+                          	
+                          '
+              ↓Div [ngx.components.UIDynamicElement-1562052281434]: 
+                beanData: '{"ionBean":"DivTag"}'
+                tagName: div
+                ↓Text [ngx.components.UIText-1562052281437]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:message.text
+                ↓Attr [ngx.components.UIAttribute-1562052281440]: 
+                  attrName: class
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:fromMsg
+              ↓Animation [ngx.components.UIAnimation-1562052281443]: 
+                animationName: slideInRight
+              ↓Attr1 [ngx.components.UIAttribute-1562052281446]: 
+                attrName: 
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:text-right
+      ↓Attr1 [ngx.components.UIAttribute-1580217046468]: 
+        attrName: '[ngClass]'
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:params1562052281347.class
+  ↓Style [ngx.components.UIStyle-1562052281449]: 
+    styleContent: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '	height: 100%;
+            	white-space: nowrap;
+            	background-size: cover;
+            '
+  ↓ToolBar [ngx.components.UIDynamicElement-1562052281452]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓Form [ngx.components.UIForm-1562052281455]: 
+      identifier: inputForm
+      ↓GenericItem [ngx.components.UIDynamicElement-1562052281458]: 
+        beanData: '{"ionBean":"GenericItem"}'
+        tagName: ion-item
+        ↓TextInput [ngx.components.UIDynamicElement-1562052281461]: 
+          beanData: |
+            '{
+             "ionBean": "Input",
+             "ControlName": "plain:inputFrom",
+             "Debounce": "plain:0",
+             "Placeholder": "plain:Saisissez un message",
+             "Required": "plain:true"
+            }'
+          identifier: MeInput
+          tagName: ion-input
+          ↓Event [ngx.components.UIControlEvent-1562063026330]: 
+            attrName: (ionFocus)
+            eventName: (ionFocus)
+            ↓ScrollToSubmitButton [ngx.components.UICustomAction-1562063053421]: 
+              actionValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                    →: |
+                                  let btn = document.getElementById('submitBtn');
+                                  window.setTimeout(()=>{btn.scrollIntoView(true)}, 200);
+                                  resolve();
+                      
+        ↓SubmitButton [ngx.components.UIDynamicElement-1562052281467]: 
+          beanData: |
+            '{
+             "ionBean": "SubmitButton",
+             "IonFill": "plain:clear",
+             "IconSlot": "plain:icon-only"
+            }'
+          tagName: ion-button
+          ↓Icon [ngx.components.UIDynamicElement-1562052281470]: 
+            beanData: '{"ionBean":"Icon","IconName":"plain:send"}'
+            tagName: ion-icon
+          ↓Attr [ngx.components.UIAttribute-1562052281473]: 
+            attrName: 
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:item-right
+          ↓Style [ngx.components.UIStyle-1562052281476]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '	font-size: 1.8rem !important;
+                    '
+          ↓Attr1 [ngx.components.UIAttribute-1562062616909]: 
+            attrName: id
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:submitBtn
+        ↓Icon [ngx.components.UIDynamicElement-1562052281479]: 
+          beanData: '{"ionBean":"Icon","IconName":"plain:mic"}'
+          tagName: ion-icon
+          ↓Event [ngx.components.UIControlEvent-1562052281482]: 
+            ↓SetGlobal [ngx.components.UIDynamicAction-1562052281485]: 
+              beanData: |
+                '{
+                 "ionBean": "SetGlobalAction",
+                 "Property": "plain:mic",
+                 "Value": "plain:danger"
+                }'
+              ↓SpeechToText [ngx.components.UIDynamicAction-1562052281488]: 
+                beanData: |
+                  '{
+                   "ionBean": "SpeechToTextAction",
+                   "locale": "plain:en-US",
+                   "matches": "plain:1",
+                   "prompt": "plain:Please speak now..."
+                  }'
+                ↓CustomAction [ngx.components.UICustomAction-1562052281491]: 
+                  actionValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                        →: |
+                          //		page.c8o.log.debug(event ? event.toString():'no event');
+                          		    this.global.mic = "primary";
+                          		    let text = vars.text;
+                          		    page.c8o.log.debug('>>>>' + text);
+                          		    this.MeInput.value = text;
+                          		    resolve();
+                          
+                  ↓text [ngx.components.UIControlVariable-1562052281494]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:out
+        ↓Attr [ngx.components.UIAttribute-1562052281497]: 
+          attrName: 
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:no-lines
+      ↓Event [ngx.components.UIControlEvent-1562052281500]: 
+        attrName: (ngSubmit)
+        eventName: onSubmit
+        ↓SetGlobal [ngx.components.UIDynamicAction-1562052281503]: 
+          beanData: |
+            '{
+             "ionBean": "SetGlobalAction",
+             "Property": "plain:myMessage",
+             "Value": "script:this.MeInput.value"
+            }'
+          ↓Alexa_Request [ngx.components.UICustomAction-1562052281506]: 
+            actionValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '            this[''messages''].push({id: this[''msgID'']++, direction: "from", text: this.global.myMessage});
+                                this.MeInput.value = "";
+                    //          setTimeout(()=> this.MeInput.setFocus(), 0);
+                                resolve();
+                    '
+            ↓CallSequence [ngx.components.UIDynamicAction-1562052281509]: 
+              beanData: |
+                '{
+                 "ionBean": "CallSequenceAction",
+                 "requestable": "plain:lib_AmazonLEX_Ngx.PostTextGetAudio",
+                 "marker": "plain:ALEXA"
+                }'
+              ↓botName [ngx.components.UIControlVariable-1562052281512]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:params1562052281347.AmazonLEXBotName
+              ↓botAlias [ngx.components.UIControlVariable-1562052281515]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:params1562052281347.AmazonLEXBotAlias
+              ↓userId [ngx.components.UIControlVariable-1562052281518]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:this.global.newUser
+              ↓data [ngx.components.UIControlVariable-1562052281521]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:this.global.myMessage
+              ↓Alexa_Response [ngx.components.UICustomAction-1562052281524]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		    let msg = vars.text;
+                        		    let sound = vars.sound;
+                                    this[''messages''].push({id: this[''msgID'']++, direction: "to", text: msg});
+                                    let audio = new Audio();
+                                    audio.src = "data:audio/mpeg;base64," + sound;
+                                    window.setTimeout(()=>{audio.play()}, 500);
+                                    
+                                    let btn = document.getElementById(''submitBtn'');
+                                    window.setTimeout(()=>{btn.scrollIntoView(true)}, 200);
+                        		    resolve();
+                        '
+                ↓text [ngx.components.UIControlVariable-1562052281527]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"converti__go","input":"listen(['lib_AmazonLEX_Ngx.PostTextGetAudio#ALEXA'])?.lex?.message"}
+                ↓sound [ngx.components.UIControlVariable-1562052281530]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"converti__go","input":"listen(['lib_AmazonLEX_Ngx.PostTextGetAudio#ALEXA'])?.lex?.audio"}
+  ↓Attr1 [ngx.components.UIAttribute-1580212979142]: 
+    attrName: '[ngClass]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1562052281347.class
+  ↓Attr11 [ngx.components.UIAttribute-1580215465000]: 
+    attrName: '[ngStyle]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:params1562052281347.style
+    isEnabled: false
+↓AmazonLEXBotName [ngx.components.UICompVariable-1579783536253]: 
+  comment: The Lex Bot Name as defined in https://us-east-1.console.aws.amazon.com/lex/home
+  value: '''BankingBot'''
+↓AmazonLEXBotAlias [ngx.components.UICompVariable-1579783557466]: 
+  comment: The Amazon Lex Bot alias
+  value: '''BankingBot'''
+↓class [ngx.components.UICompVariable-1580212846603]: 
+  value: '''chatarea chatbox'''
+↓style [ngx.components.UICompVariable-1580217107672]: 
+↓toUser [ngx.components.UICompVariable-1580383902849]: 
+  value: '''Convertigo'''

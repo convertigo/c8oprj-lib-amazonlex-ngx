@@ -1,0 +1,5 @@
+tplProjectName: mobilebuilder_tpl_8_0_0_ngx
+↓Menu [ngx.components.UIDynamicMenu-1562069116561]: 🗏 mobileMenus/Menu.yaml
+↓ChatBot [ngx.components.UISharedComponent-1562052281347]: 🗏 mobileSharedComponents/ChatBot.yaml
+↓Page [ngx.components.PageComponent-1562069093658]: 🗏 mobilePages/Page.yaml
+↓testChatBot [ngx.components.PageComponent-1614695600928]: 🗏 mobilePages/testChatBot.yaml
