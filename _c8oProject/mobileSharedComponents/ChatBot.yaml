@@ -26,7 +26,7 @@ comment: |
         beanData: |
           '{
            "ionBean": "CallSequenceAction",
-           "requestable": "plain:lib_AmazonLEX_Ngx.Init",
+           "requestable": "plain:lib_AmazonLEX.Init",
            "marker": "plain:INIT"
           }'
         ↓InitMessage [ngx.components.UICustomAction-1562052281362]: 
@@ -310,7 +310,7 @@ comment: |
               beanData: |
                 '{
                  "ionBean": "CallSequenceAction",
-                 "requestable": "plain:lib_AmazonLEX_Ngx.PostTextGetAudio",
+                 "requestable": "plain:lib_AmazonLEX.PostTextGetAudio",
                  "marker": "plain:ALEXA"
                 }'
               ↓botName [ngx.components.UIControlVariable-1562052281512]: 
@@ -358,12 +358,12 @@ comment: |
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"converti__go","input":"listen(['lib_AmazonLEX_Ngx.PostTextGetAudio#ALEXA'])?.lex?.message"}
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_AmazonLEX_ui_ngx","input":"listen(['lib_AmazonLEX.PostTextGetAudio#ALEXA'])?.lex?.message"}
                 ↓sound [ngx.components.UIControlVariable-1562052281530]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"converti__go","input":"listen(['lib_AmazonLEX_Ngx.PostTextGetAudio#ALEXA'])?.lex?.audio"}
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"lib_AmazonLEX_ui_ngx","input":"listen(['lib_AmazonLEX.PostTextGetAudio#ALEXA'])?.lex?.audio"}
   ↓Attr1 [ngx.components.UIAttribute-1580212979142]: 
     attrName: '[ngClass]'
     attrValue: 

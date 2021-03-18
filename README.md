@@ -1,6 +1,6 @@
-# lib_AmazonLEX_Ngx
-Library for interacting with Amazon Lex Chatbots
-This library Enables Convertigo to build conversational Apps for Mobile Web and Desktop Apps by interacting with Amazon's ChatBot Technology...
+# lib_AmazonLEX_ui_ngx
+Uses library for interacting with Amazon Lex Chatbots and provides a "**ChatBot**" shared component
+
 
 # Installation
 
@@ -8,17 +8,9 @@ This library Enables Convertigo to build conversational Apps for Mobile Web and 
 
 * In the Dialog 'Project remote URL' field Paste :
 
-        lib_AmazonLEX_Ngx=https://github.com/convertigo/c8oprj-lib-amazonlex-ngx.git
+        lib_AmazonLEX_ui_ngx=https://github.com/convertigo/c8oprj-lib-amazonlex-ui-ngx.git:branch=8.0.0
 
 * And click the 'Finish' button
-* Create all 'Undefined Global Symbols' when prompted
 
 # Usage
-Use the interaction sequences.
-
-## Sequences
-
- * PostTextGetAudio  _Posts a message to Amazon and wait a chatbot Response as text_
- * PostTextGetText  _Posts a message to Amazon and wait a chatbot Response as Audio_
-
-
+Contains a sharedComponent named "**ChatBot**" you can use in your own projects.

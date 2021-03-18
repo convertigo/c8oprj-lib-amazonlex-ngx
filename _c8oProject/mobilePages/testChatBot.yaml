@@ -49,7 +49,7 @@ title: testChatBot
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
   ↓UseSharedComponent [ngx.components.UIUseShared-1614695836812]: 
-    sharedcomponent: lib_AmazonLEX_Ngx.Mobile_application.Application.ChatBot
+    sharedcomponent: lib_AmazonLEX_ui_ngx.Mobile_application.Application.ChatBot
 ↓Footer [ngx.components.UIDynamicElement-1614695703183]: 
   beanData: '{"ionBean":"Footer"}'
   comment: Page footer
