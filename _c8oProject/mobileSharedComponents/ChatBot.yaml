@@ -69,7 +69,7 @@ comment: |
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:params1562052281347.toUser
+                      - MobileSmartSourceType: script:this.toUser
                 ↓Attr [ngx.components.UIAttribute-1562052281392]: 
                   attrName: class
                   attrValue: 
@@ -168,7 +168,7 @@ comment: |
         attrValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: script:params1562052281347.class
+            - MobileSmartSourceType: script:this.class
   ↓Style [ngx.components.UIStyle-1562052281449]: 
     styleContent: 
       - xmlizable: 
@@ -318,13 +318,13 @@ comment: |
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: script:params1562052281347.AmazonLEXBotName
+                    - MobileSmartSourceType: script:this.AmazonLEXBotName
               ↓botAlias [ngx.components.UIControlVariable-1562052281515]: 
                 comment: new variable
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: script:params1562052281347.AmazonLEXBotAlias
+                    - MobileSmartSourceType: script:this.AmazonLEXBotAlias
               ↓userId [ngx.components.UIControlVariable-1562052281518]: 
                 comment: new variable
                 varValue: 
@@ -369,13 +369,13 @@ comment: |
     attrValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1562052281347.class
+        - MobileSmartSourceType: script:this.class
   ↓Attr11 [ngx.components.UIAttribute-1580215465000]: 
     attrName: '[ngStyle]'
     attrValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: script:params1562052281347.style
+        - MobileSmartSourceType: script:this.style
     isEnabled: false
 ↓AmazonLEXBotName [ngx.components.UICompVariable-1579783536253]: 
   comment: The Lex Bot Name as defined in https://us-east-1.console.aws.amazon.com/lex/home
