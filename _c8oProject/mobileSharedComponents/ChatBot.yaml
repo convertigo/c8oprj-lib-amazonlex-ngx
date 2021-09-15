@@ -18,8 +18,8 @@ comment: |
           - com.twinsoft.convertigo.beans.common.FormatedContent: 
             →: |
               		page.c8o.log.debug("declaring chatbot variables...");
-              		this["messages"] = [];
-              		this["msgID"] = 1;
+              		page["messages"] = [];
+              		page["msgID"] = 1;
               		resolve();
               
       ↓CallSequence [ngx.components.UIDynamicAction-1562052281359]: 
@@ -36,8 +36,8 @@ comment: |
               - com.twinsoft.convertigo.beans.common.FormatedContent: 
                 →: |
                   '		    //this.messages.push({id: 1, direction: "to", text: "What can I do for you?"})
-                  		    this["messages"].push({id: 1, direction: "to", text: "What can I do for you?"})	    
-                  		    this.global.newUser = "User" + new Date().getTime().toString().substr(-5);
+                  		    page["messages"].push({id: 1, direction: "to", text: "What can I do for you?"})	    
+                  		    page.global.newUser = "User" + new Date().getTime().toString().substr(-5);
                   		    resolve();
                   '
 ↓ScrollArea [ngx.components.UIDynamicElement-1562052281365]: 
@@ -268,10 +268,10 @@ comment: |
                       - com.twinsoft.convertigo.beans.common.FormatedContent: 
                         →: |
                           //		page.c8o.log.debug(event ? event.toString():'no event');
-                          		    this.global.mic = "primary";
+                          		    page.global.mic = "primary";
                           		    let text = vars.text;
                           		    page.c8o.log.debug('>>>>' + text);
-                          		    this.MeInput.value = text;
+                          		    page['MeInput'].value = text;
                           		    resolve();
                           
                   ↓text [ngx.components.UIControlVariable-1562052281494]: 
@@ -293,7 +293,7 @@ comment: |
             '{
              "ionBean": "SetGlobalAction",
              "Property": "plain:myMessage",
-             "Value": "script:this.MeInput.value"
+             "Value": "script:page[''MeInput''].value"
             }'
           ↓Alexa_Request [ngx.components.UICustomAction-1562052281506]: 
             actionValue: 
@@ -301,8 +301,8 @@ comment: |
                 - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
                 - com.twinsoft.convertigo.beans.common.FormatedContent: 
                   →: |
-                    '            this[''messages''].push({id: this[''msgID'']++, direction: "from", text: this.global.myMessage});
-                                this.MeInput.value = "";
+                    '            page[''messages''].push({id: this[''msgID'']++, direction: "from", text: page.global.myMessage});
+                                page[''MeInput''].value = "";
                     //          setTimeout(()=> this.MeInput.setFocus(), 0);
                                 resolve();
                     '
@@ -345,7 +345,7 @@ comment: |
                       →: |
                         '		    let msg = vars.text;
                         		    let sound = vars.sound;
-                                    this[''messages''].push({id: this[''msgID'']++, direction: "to", text: msg});
+                                    page[''messages''].push({id: page[''msgID'']++, direction: "to", text: msg});
                                     let audio = new Audio();
                                     audio.src = "data:audio/mpeg;base64," + sound;
                                     window.setTimeout(()=>{audio.play()}, 500);
